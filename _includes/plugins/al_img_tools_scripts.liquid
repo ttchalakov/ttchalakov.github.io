@@ -1,0 +1,40 @@
+{% comment %}
+  Override of al_folio_core's wrapper for the al_img_tools scripts tag. It adds an image viewer:
+  clicking an image marked data-zoomable (the paper images and project figures) opens it in
+  PhotoSwipe, above the navbar and footer and fitted to the screen. From there the scroll wheel,
+  a trackpad or touch pinch, or a click zooms in, dragging pans, and Esc or a click on the
+  background closes it. It replaces the theme's medium-zoom, which only scaled an image to the
+  window, let the fixed navbar and footer cover tall images, and could not zoom further.
+  PhotoSwipe's version (5.4.4) and integrity hash match the ones al_img_tools pins.
+{% endcomment %}
+{% al_img_tools_scripts %}
+<link
+  rel="modulepreload"
+  href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"
+  integrity="sha256-VCBpdxvrNNxGHNuTdNqK9kPFkev2XY7DYzHdmgaB69Q="
+  crossorigin="anonymous"
+>
+<script type="module">
+  import PhotoSwipe from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js';
+
+  document.addEventListener('click', (event) => {
+    const img = event.target.closest('img[data-zoomable]');
+    if (!img || !img.naturalWidth) return;
+    event.preventDefault();
+    new PhotoSwipe({
+      dataSource: [
+        {
+          src: img.currentSrc || img.src,
+          width: img.naturalWidth,
+          height: img.naturalHeight,
+          alt: img.alt,
+        },
+      ],
+      wheelToZoom: true,
+      padding: { top: 24, bottom: 24, left: 24, right: 24 },
+      maxZoomLevel: 4,
+      showHideAnimationType: 'fade',
+      bgOpacity: 0.92,
+    }).init();
+  });
+</script>

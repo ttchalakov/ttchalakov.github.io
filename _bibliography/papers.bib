@@ -1,0 +1,120 @@
+---
+---
+
+% Your publications, rendered on /publications/ (entries with selected = {true} also appear on the home page).
+% Paste BibTeX exported from Google Scholar / DBLP / Semantic Scholar, then add any of these optional
+% al-folio fields to an entry to get buttons and badges:
+%   abbr        = {NeurIPS}              venue badge (link/color it in _data/venues.yml)
+%   selected    = {true}                 also list it on the home page
+%   preview     = {paper.png}            thumbnail from assets/img/publication_preview/
+%   pdf         = {paper.pdf}            file in assets/pdf/ (or a full URL)
+%   arxiv       = {2401.00001}           arXiv button
+%   code        = {https://github.com/...}
+%   website     = {https://...}          project page
+%   video, slides, poster, supp, blog, html = {...}
+%   abstract    = {...}                  "ABS" button
+%   bibtex_show = {true}                 "BIB" button
+% Your own name is highlighted automatically (see `scholar:` in _config.yml).
+% Field reference: https://github.com/alshedivat/al-folio/blob/main/docs/CUSTOMIZE.md#adding-a-new-publication
+%
+% Metadata below comes from arXiv, Crossref (the publisher's record), and the ICRA 2022 workshop page,
+% all linked from the 2026 resume. The RA-L record and the workshop page both list the last author as "Y Z".
+
+% Under review. The venue reviews double-blind, so the site shows the title, authors, abstract,
+% and one figure (Fig. 5, the hardware flight) but names no venue and links no PDF or BibTeX until
+% the paper is accepted (the author's choice; the venue's light double-blind policy allows a
+% non-anonymized arXiv preprint). The unpublished entry type is what the home and publications
+% pages query for papers under review.
+
+@unpublished{taskentropy2026,
+  title       = {Task Entropy for Low Bitrate Robot Control: Minimal data rate controller for a nano-drone},
+  author      = {Tchalakov, Teodor and Mitra, Sayan},
+  year        = {2026},
+  abbr        = {Under review},
+  preview     = {hscc_flight.jpg},
+  abstract    = {Low bitrate robot control requires knowing how much feedback information a task demands. Reachability entropy answers this for reaching a fixed target set, but visiting locations in order or returning to the start depends on the execution history, since one physical state can occur at different task stages. We introduce task entropy for tasks given as labels on executions, extending reachability entropy to history-dependent tasks with no automaton fixed in advance. For set-valued dynamics with full-state observations, we prove that it equals the least worst-case average data rate of coder–controllers guaranteeing completion. We learn a coder–controller that refines the set of states consistent with the sent symbols only when needed. On two history-dependent nano-drone tasks it reduces the maximum bit count 2.3 to 5.6 times relative to a fixed-grid coder in simulation, and Crazyflie nano-drone flights demonstrate the communication scheme on hardware.}
+}
+
+@inproceedings{yuceel2026minimal,
+  preview     = {cdc_vq_partition.png},
+  title       = {Minimal Information Control Invariance via Vector Quantization},
+  author      = {Yuceel, Ege and Tchalakov, Teodor and Mitra, Sayan},
+  booktitle   = {IEEE Conference on Decision and Control (CDC)},
+  year        = {2026},
+  note        = {To appear},
+  abbr        = {CDC},
+  arxiv       = {2604.03132},
+  abstract    = {Safety-critical autonomous systems must satisfy hard state constraints under tight computational and sensing budgets, yet learning-based controllers are often far more complex than safe operation requires. To formalize this gap, we study how many distinct control signals are needed to render a compact set forward invariant under sampled-data control, connecting the question to the information-theoretic notion of invariance entropy. We propose a vector-quantized autoencoder that jointly learns a state-space partition and a finite control codebook, and develop an iterative forward certification algorithm that uses Lipschitz-based reachable-set enclosures and sum-of-squares programming. On a 12-dimensional nonlinear quadrotor model, the learned controller achieves a 157× reduction in codebook size over a uniform grid baseline while preserving invariance, and we empirically characterize the minimum sensing resolution compatible with safe operation.},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@article{null2024automatically,
+  preview         = {autompc_ral_fig7.jpg},
+  title       = {Automatically-Tuned Model Predictive Control for an Underwater Soft Robot},
+  author      = {Null, W. David and Edwards, William and Jeong, Dohun and Tchalakov, Teodor and Menezes, James and Hauser, Kris and Z, Y},
+  journal     = {IEEE Robotics and Automation Letters},
+  volume      = {9},
+  number      = {1},
+  pages       = {571--578},
+  year        = {2024},
+  doi         = {10.1109/LRA.2023.3333662},
+  abbr        = {RA-L},
+  html        = {https://ieeexplore.ieee.org/document/10319713},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@inproceedings{null2022automatically,
+  preview         = {autompc_workshop_fig1.jpg},
+  title       = {Automatically-Tuned Model Predictive Control for an Underwater Soft Robotic Arm},
+  author      = {Null, David and Tchalakov, Teodor and Edwards, William and Hauser, Kris and Z, Y},
+  booktitle   = {ICRA 2022 Workshop on Compliant Robot Manipulation},
+  year        = {2022},
+  abbr        = {ICRA-W},
+  html        = {https://sites.google.com/view/icra-2022-compliantmanip/workshop-papers#h.zadv8ofg6uhn},
+  pdf         = {autompc_icra2022_workshop.pdf},
+  abstract    = {Soft robot arms are especially appealing candidates for underwater manipulation thanks to their actuation mechanisms. However, modeling and controlling soft arms to achieve precision tasks has remained a significant challenge. Learned MPC has been applied to soft robot control in prior work, but we address the problem that MPC is highly sensitive to the hyperparameters of the learned model and optimizer, and tuning them manually is a tedious process. In this work, we adopt the AutoMPC approach to automatically tune the MPC controller from an offline dataset, and extend it to handle multi-task tuning. On a 2D, hydraulically actuated underwater soft robot, we compare this method to a learned inverse kinematics model that predicts the actuation pressures needed to achieve a static configuration. Although both controllers were trained on the same dataset, AutoMPC achieved 75\% improvement in targeting accuracy.},
+  bibtex_show = {true}
+}
+
+% -----------------------------------------------------------------------------------------------
+% Working papers: the RISS reports, listed apart from conference and journal papers. They use the techreport entry type, which the home and
+% publications pages list under "working papers" (never type an at sign in these comments: BibTeX
+% reads one as the start of an entry). Title, authors, and abstract come from each paper's PDF. The
+% site hosts no copies of these papers. The 2022 paper links to page 211 of the RISS Working Papers
+% Journal (vol. 10), which the program publishes after each summer; the journals are listed at
+% https://riss.ri.cmu.edu/research_showcase/working-papers-journals/ . No 2024 journal has been
+% published, so the 2024 paper links to Teodor's copy on Google Drive. The posters (Google Drive)
+% and talk videos (YouTube) are Teodor's own uploads.
+
+@techreport{tchalakov2024riss,
+  preview         = {riss2024_planned_trajectory.png},
+  abbr            = {RISS},
+  title           = {Slack Convex Feasible Set Trajectory Optimizer},
+  author          = {Tchalakov, Teodor and Liu, Simin and Liu, Changliu and Dolan, John M.},
+  institution     = {Carnegie Mellon University},
+  howpublished    = {Working paper, Robotics Institute Summer Scholars (RISS), Carnegie Mellon University},
+  year            = {2024},
+  abstract        = {Trajectory planners are a fundamental robotics tool where often highly nonlinear and non-convex problems are formulated to solve for high-quality trajectories with respect to nonlinear system dynamics, obstacle avoidance, and other general constraints. The optimization-based trajectory planning approach seeks to find locally optimal trajectories in real time that are feasible. The Slack Convex Feasible Set (SCFS) algorithm was proposed to handle non-convex inequality and nonlinear dynamics equality constraints in real time by convexification. We present SCFS as a general purpose kinodynamic trajectory optimizer and derive a new convexification method for compact non-convex feasible sets. However, we observe that for problems with large negative Hessian eigenvalues and small feasible regions, the convergence rate and initialization robustness of SCFS suffer significantly. We demonstrate methods to improve initialization robustness and assess methods for improving convergence rates on a dynamic conveyor picking problem.},
+  pdf             = {https://drive.google.com/file/d/1MF4IeeKGDPu_Kf8SvMHMcCCTrT23V42T/view},
+  poster          = {https://drive.google.com/file/d/132OaCRNWRFeCMU756vzG8gZoF_94bIng/view},
+  video           = {https://www.youtube.com/watch?v=_wilJbJ5Pbg},
+  bibtex_show     = {true}
+}
+
+@techreport{tchalakov2022riss,
+  preview         = {riss2022_bounding_sivia.png},
+  abbr            = {RISS},
+  title           = {Guaranteed Parameter Uncertainty Estimation Using Interval Analysis for Robust Safety-Critical Control},
+  author          = {Tchalakov, Teodor and Lin, Qin and Dolan, John M.},
+  institution     = {Carnegie Mellon University},
+  howpublished    = {Robotics Institute Summer Scholars Working Papers Journal, vol. 10, Carnegie Mellon University},
+  year            = {2022},
+  pages           = {211--216},
+  abstract        = {Robust control Lyapunov functions (CLFs) and control barrier functions (CBFs) use the largest bounds of parameter uncertainties to achieve robust safety-critical control, but the literature has proposed the bounds be manually tuned. This tuning problem requires balancing large uncertainty bounds in robust controllers that produce aggressive behavior against small uncertainty bounds that violate robustness. We present an over-approximate model parameter uncertainty estimation method for applications in robust CLF-CBF quadratic programming (QP) controllers using interval analysis. This work expands upon the set inversion via interval analysis (SIVIA) algorithm, which can be used offline to find bounds on parameter uncertainties from system observations. We improve the efficiency of SIVIA for finding the largest verified parameter intervals with an over-approximate heuristic search that uses system identification to provide initial guesses. The identification of model uncertainties can enable the lifelong operation of robust safety-critical systems. We test our approach's accuracy and efficiency in comparison to SIVIA on an adaptive cruise control scenario with a robust CLF-CBF-QP controller.},
+  pdf             = {https://riss.ri.cmu.edu/wp-content/uploads/2023/08/CMU-RISS_Working_Papers_Journal-2022-PAPERS.pdf#page=211},
+  poster          = {https://drive.google.com/file/d/1ugYz2jrBpqnbVOB5iHVibSP-EJItBtDZ/view},
+  video           = {https://www.youtube.com/watch?v=8FX27eK2ldw},
+  bibtex_show     = {true}
+}

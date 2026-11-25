@@ -1,0 +1,73 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Site override of al_folio_core's assets/css/main.scss (copied from al_folio_core 1.0.15).
+// The only change is the accent color passed to "variables" below. After updating
+// al_folio_core, compare this file with the gem's copy and carry that change over.
+//
+// Accent color: a deep blue. The template names its light-theme accent $purple-color and its
+// dark-theme accent $cyan-color; both are set here, and links, headings, buttons, and the
+// light-theme code background follow. Links aren't underlined until hovered, so each shade
+// is picked to meet WCAG contrast both against the page background (>= 4.5:1) and against
+// the body text (>= 3:1):
+//   light theme #245b99: 6.9:1 on white, 3.0:1 against the black body text
+//   dark theme  #4c87cb: 4.6:1 on the #1c1c1d background, 3.0:1 against the #e8e8e8 body text
+
+/* Built-in Sass modules you’ll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{site.max_width | default: "930px"}},
+  $purple-color: #245b99,
+  $cyan-color: #4c87cb
+);
+
+/* Your project partials — convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+// Show the whole name in bold. The theme bolds only the first name: in the home page title, and in
+// the navbar link to the home page on the other pages.
+.post-title:has(> .font-weight-bold),
+.navbar-brand.title {
+  font-weight: bold !important;
+}
+
+// Larger paper images. The theme puts each paper's badge and image in a column one sixth of the
+// content wide (about 125 px of image), the text in the next two thirds, and leaves the last sixth
+// empty. From small-tablet width up, the image column gets 30% (about 240 px of image, close to the
+// thumbnails on other robotics sites) and the text the remaining 70%, as wide as it was before.
+@media (min-width: 576px) {
+  .publications ol.bibliography li .row {
+    > .abbr {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
+    > .col-sm-8 {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+  }
+}

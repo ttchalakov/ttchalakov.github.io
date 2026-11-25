@@ -1,0 +1,6 @@
+# Optional: link and color the venue badge shown next to a publication
+# (matched against the `abbr` field of its .bib entry).
+# Example:
+# "NeurIPS":
+#   url: https://neurips.cc
+#   color: "#00369f"

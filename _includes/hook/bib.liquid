@@ -1,0 +1,8 @@
+{% comment %}
+  Hook that al-folio's bib layout includes just before it prints an entry's venue line.
+  Working papers (techreport entries) show their howpublished text there, in italics,
+  the way journal and conference names appear for published papers.
+{% endcomment %}
+{% if entry.type == 'techreport' and entry.howpublished %}
+  {% capture entrytype %}<em>{{ entry.howpublished }}</em>{% endcapture %}
+{% endif %}

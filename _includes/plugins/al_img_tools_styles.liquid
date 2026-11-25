@@ -1,0 +1,18 @@
+{% comment %}
+  Override of al_folio_core's wrapper for the al_img_tools styles tag. It adds the styles for the
+  PhotoSwipe image viewer that _includes/plugins/al_img_tools_scripts.liquid opens. That viewer
+  replaces the theme's medium-zoom, which is turned off in _config.yml (enable_medium_zoom: false).
+  PhotoSwipe's version (5.4.4) matches the one al_img_tools pins.
+{% endcomment %}
+{% al_img_tools_styles %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.min.css"
+  integrity="sha384-CKeYI6jsYBV4DV34zRfxht32qlPolZvokUknVb7SnE4PCoiTTqCN47Tr+hQAKkXY"
+  crossorigin="anonymous"
+>
+<style>
+  img[data-zoomable] {
+    cursor: zoom-in;
+  }
+</style>

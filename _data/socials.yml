@@ -1,0 +1,14 @@
+# Contact / profile icons shown on the home page, in the order listed here.
+# Uncomment and fill in the ones you use. Supported keys:
+# https://github.com/george-gca/jekyll-socials
+email: ttcha2@illinois.edu # envelope icon (a plain mailto: link)
+# scholar_userid: XXXXXXXXXXXX # Google Scholar: the `user=` value in your profile URL
+orcid_id: 0000-0002-9307-1777 # from the publisher's record of the 2024 RA-L paper
+github_username: ttchalakov
+linkedin_username: teodor-tchalakov
+# semanticscholar_id: 0000000000
+# dblp_url: https://dblp.org/pid/xx/xxxx.html
+# x_username: your-handle
+# bluesky_url: https://bsky.app/profile/your-handle
+# cv_pdf: /assets/pdf/cv.pdf # adds a CV icon linking to this file
+# rss_icon: true # enable once you have blog posts

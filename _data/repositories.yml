@@ -1,0 +1,9 @@
+# Used by /repositories/ (hidden from the navbar until you set nav: true in _pages/repositories.md).
+github_users:
+  - ttchalakov
+
+repo_description_lines_max: 2
+
+# Cards for individual repositories (owner/name). Leave empty to hide the section.
+github_repos:
+#  - ttchalakov/some-repo

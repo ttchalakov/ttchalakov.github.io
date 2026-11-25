@@ -1,0 +1,93 @@
+---
+permalink: /robots.txt
+---
+# Search engines may crawl the whole site.
+User-agent: *
+Disallow:
+
+# Crawlers that collect pages for AI training, AI datasets, or resale to AI companies may not.
+# Search engines, AI search, assistants that fetch a page when someone asks about it, and link
+# previews are still allowed. The list comes from https://github.com/ai-robots-txt/ai.robots.txt
+# (November 2026); new crawlers appear often, so check it now and then. Crawlers that ignore
+# robots.txt are not stopped by this file.
+User-agent: AgentDataBot
+User-agent: AI2Bot
+User-agent: Ai2Bot-Dolma
+User-agent: aiHitBot
+User-agent: Amazonbot
+User-agent: anthropic-ai
+User-agent: ApifyBot
+User-agent: ApifyWebsiteContentCrawler
+User-agent: Applebot-Extended
+User-agent: bedrockbot
+User-agent: BixelBot
+User-agent: Brightbot
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: ChatGLM-Spider
+User-agent: ClaudeBot
+User-agent: CloudflareBrowserRenderingCrawler
+User-agent: cohere-training-data-crawler
+User-agent: Cotoyogi
+User-agent: CragCrawler
+User-agent: Crawlspace
+User-agent: DeepSeekBot
+User-agent: Diffbot
+User-agent: EchoboxBot
+User-agent: ElevenlabsCrawler
+User-agent: ERNIEBot
+User-agent: ExaBot
+User-agent: FacebookBot
+User-agent: Factset_spyderbot
+User-agent: FirecrawlAgent
+User-agent: FriendlyCrawler
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: GoogleOther-Image
+User-agent: GoogleOther-Video
+User-agent: GPTBot
+User-agent: HenkBot
+User-agent: Hunyuan
+User-agent: ICC-Crawler
+User-agent: ImagesiftBot
+User-agent: imageSpider
+User-agent: img2dataset
+User-agent: ISSCyberRiskCrawler
+User-agent: Kangaroo Bot
+User-agent: KimiBot
+User-agent: laion-huggingface-processor
+User-agent: LAIONDownloader
+User-agent: Meta-ExternalAgent
+User-agent: MistralAI-Training
+User-agent: MoonshotBot
+User-agent: MyCentralAIScraperBot
+User-agent: NagetBot
+User-agent: newsai
+User-agent: omgili
+User-agent: omgilibot
+User-agent: PanguBot
+User-agent: Panscient
+User-agent: panscient.com
+User-agent: Poseidon Research Crawler
+User-agent: Querit-SearchBot
+User-agent: QueritBot
+User-agent: QwenBot
+User-agent: SBIntuitionsBot
+User-agent: Scrapy
+User-agent: ShapBot
+User-agent: Sidetrade indexer bot
+User-agent: TavilyBot
+User-agent: Terra Cotta
+User-agent: TerraCotta
+User-agent: TikTokSpider
+User-agent: Timpibot
+User-agent: VelenPublicWebCrawler
+User-agent: Webzio-Extended
+User-agent: xAI-Grok
+User-agent: YandexAdditional
+User-agent: YandexAdditionalBot
+User-agent: YiBot
+User-agent: YouBot
+Disallow: /
+
+Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
